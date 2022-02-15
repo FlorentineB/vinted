@@ -5,7 +5,7 @@ import Cookies from "js-cookie";
 import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home";
 import Signup from "./pages/Sign/Signup";
-import Login from "./pages/Sign/Signin";
+import Signin from "./pages/Sign/Signin";
 import Offer from "./pages/Offer/Offer";
 import NotFound from "./pages/NotFound/NotFound";
 import Footer from "./components/Footer";
@@ -54,8 +54,9 @@ function App() {
           }
         />
         <Route path="/signup" element={<Signup setUser={setUser} />} />
-        <Route path="/login" element={<Login setUser={setUser} />} />
+        <Route path="/signin" element={<Signin setUser={setUser} />} />
         <Route path="/offer/:id" element={<Offer />} />
+        <Route path="/publish" element={<Publish token={token} />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

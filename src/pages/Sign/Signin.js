@@ -4,7 +4,7 @@ import axios from "axios";
 import "./Sign.css";
 import { Link } from "react-router-dom";
 
-const Login = ({ setUser }) => {
+const Signin = ({ setUser }) => {
   // On crée les states pour les éléments d'identification (email et password-)
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -70,4 +70,4 @@ const Login = ({ setUser }) => {
   );
 };
 
-export default Login;
+export default Signin;

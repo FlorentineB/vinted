@@ -76,7 +76,7 @@ const Header = ({
           <Link to="/signup">
             <button className="theme-secondary">S'inscrire</button>
           </Link>
-          <Link to="/login">
+          <Link to="/signin">
             <button className="theme-secondary">Se connecter</button>
           </Link>
         </div>

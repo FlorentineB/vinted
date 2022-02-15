@@ -95,7 +95,7 @@ const Signup = ({ setUser }) => {
         />
         <span>{errorMessage}</span>
       </form>
-      <Link to="/login">Tu as déjà un compte ? Connecte-toi !</Link>
+      <Link to="/signin">Tu as déjà un compte ? Connecte-toi !</Link>
     </div>
   );
 };
