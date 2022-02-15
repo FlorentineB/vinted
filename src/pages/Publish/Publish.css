@@ -1,0 +1,71 @@
+.publish-form {
+  background-color: #ebedee;
+  min-height: calc(100vh - 59px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 24px;
+}
+
+.publish-card {
+  background-color: #fff;
+  margin: 20px;
+  box-shadow: 0 0 2px grey;
+  width: calc(100% - 40px);
+  max-width: 500px;
+  padding: 0 10px;
+  border-radius: 4px;
+}
+
+.publish-card-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.publish-card-item input,
+.publish-card-item textarea {
+  border: none;
+  border-bottom: 1px solid #2cb1ba;
+  height: 35px;
+}
+
+.publish-card-item label,
+.publish-card-item textarea,
+.publish-card-item input {
+  flex: 1;
+}
+
+.publish-add-file {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 5px;
+  font-family: "Maison Neue";
+  outline: none;
+  border: 1px solid #2cb1ba;
+  cursor: pointer;
+  color: rgb(44, 177, 186);
+
+  height: 45px;
+  width: 180px;
+  margin: 24px auto;
+}
+
+.publish-divider {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: rgba(17, 17, 17, 0.1);
+  margin: 12px 0;
+}
+.publish-submit {
+  height: 30px;
+  width: 115px;
+  font-size: 16px;
+}

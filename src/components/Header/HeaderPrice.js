@@ -7,7 +7,7 @@ const MAX = 500;
 
 const color = "rgb(44, 177, 186)";
 
-const LabeledTwoThumbs = ({ setPriceMin, setPriceMax, priceMin, priceMax }) => {
+const HeaderPrice = ({ setPriceMin, setPriceMax, priceMin, priceMax }) => {
   const [values, setValues] = React.useState([priceMin, priceMax]);
 
   const handleRequest = (values) => {
@@ -97,4 +97,4 @@ const LabeledTwoThumbs = ({ setPriceMin, setPriceMax, priceMin, priceMax }) => {
   );
 };
 
-export default LabeledTwoThumbs;
+export default HeaderPrice;

@@ -33,7 +33,7 @@ const Signup = ({ setUser }) => {
       );
       // S'il y a bien un token, on met à jour le state de user et on revient à la page Home...
       if (response.data.token) {
-        setUser(response.data.token);
+        setUser({ token: response.data.token, userId: response.data._id });
         navigate("/");
       }
       //... sinon on renvoie une erreur au client en prévenant que l'email a déjàn un compte

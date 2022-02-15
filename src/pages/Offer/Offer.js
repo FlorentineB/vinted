@@ -1,19 +1,16 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import "./Offer.css";
 
-const Offer = () => {
+const Offer = ({ setSelectedProduct }) => {
   // On récupère les params
   const params = useParams();
-  console.log(params);
   const id = params.id;
 
   // On crée plusieurs states (le premier pour récupérer la data, le 2ème pour gérer l'asynchronicité de useEffect)
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
-
-  console.log("data", data);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,6 +19,7 @@ const Offer = () => {
       );
       // On met à jour la data :
       setData(response.data);
+      setSelectedProduct(response.data);
       // On met à jour le state de isLoading pour poursuivre le code
       setIsLoading(false);
     };
@@ -72,7 +70,9 @@ const Offer = () => {
             </span>
           </div>
         </div>
-        <button className="theme-primary offer-button">Acheter</button>
+        <Link to="/payment">
+          <button className="theme-primary">Acheter</button>
+        </Link>
       </div>
     </div>
   );

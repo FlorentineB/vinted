@@ -7,11 +7,14 @@ import Home from "./pages/Home/Home";
 import Signup from "./pages/Sign/Signup";
 import Signin from "./pages/Sign/Signin";
 import Offer from "./pages/Offer/Offer";
+import Payment from "./pages/Payment/Payment";
+import Publish from "./pages/Publish/Publish";
 import NotFound from "./pages/NotFound/NotFound";
-import Footer from "./components/Footer";
 
 function App() {
   const [token, setToken] = useState(Cookies.get("userToken") || null);
+  const [userId, setUserId] = useState(Cookies.get("userId") || null);
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const [title, setTitle] = useState(null);
   const [priceMin, setPriceMin] = useState(50);
   const [priceMax, setPriceMax] = useState(100);
@@ -19,14 +22,26 @@ function App() {
 
   console.log("title", title, sorted);
 
-  const setUser = (token) => {
-    if (token) {
-      Cookies.set("userToken", token, { expires: 1 });
-    } else {
+  const setUser = (user) => {
+    if (!user) {
       Cookies.remove("userToken");
+      Cookies.remove("userId");
+      setToken(null);
+      setUserId(null);
+    } else {
+      const { token, userId } = user;
+      if (token) {
+        Cookies.set("userToken", token, { expires: 1 });
+      }
+      if (userId) {
+        Cookies.set("userId", userId, { expires: 1 });
+      }
+      setToken(token);
+      setUserId(userId);
     }
-    setToken(token);
   };
+
+  console.log("creds", token, userId);
 
   return (
     <Router>
@@ -55,11 +70,19 @@ function App() {
         />
         <Route path="/signup" element={<Signup setUser={setUser} />} />
         <Route path="/signin" element={<Signin setUser={setUser} />} />
-        <Route path="/offer/:id" element={<Offer />} />
+        <Route
+          path="/offer/:id"
+          element={<Offer setSelectedProduct={setSelectedProduct} />}
+        />
+        <Route
+          path="/payment"
+          element={
+            <Payment selectedProduct={selectedProduct} userId={userId} />
+          }
+        />
         <Route path="/publish" element={<Publish token={token} />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <Footer />
     </Router>
   );
 }

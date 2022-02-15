@@ -58,7 +58,7 @@ const Home = ({ title, priceMin, priceMax, sorted }) => {
             }
           });
           return (
-            <div className="products_presentation">
+            <div key={product._id} className="products_presentation">
               <Link to={`/offer/${product._id}`} key={product._id}>
                 <div className="product">
                   <div className="product_owner_info">

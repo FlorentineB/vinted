@@ -15,6 +15,7 @@ button {
   font-family: "Maison Neue";
   outline: none;
   border: 1px solid #2cb1ba;
+  cursor: pointer;
 }
 
 h2 {
@@ -27,6 +28,10 @@ input[type="text" i] {
 }
 
 input:focus {
+  outline: none;
+}
+
+textarea:focus {
   outline: none;
 }
 

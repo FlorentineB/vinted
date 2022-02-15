@@ -25,7 +25,7 @@ const Signin = ({ setUser }) => {
       );
       // S'il y a bien un token, on met à jour le setUser et on revient à la page Home
       if (response.data.token) {
-        setUser(response.data.token);
+        setUser({ token: response.data.token, userId: response.data._id });
         navigate("/");
       }
     } catch (error) {

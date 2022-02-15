@@ -3,6 +3,7 @@ import logo from "../../logo.png";
 import "./Header.css";
 import { FaSearch } from "react-icons/fa";
 import HeaderPrice from "./HeaderPrice";
+import HeaderSorted from "./HeaderSorted";
 
 const Header = ({
   token,
@@ -29,6 +30,8 @@ const Header = ({
     setSorted(event.target.checked ? "asc" : "desc");
   };
 
+  console.log("token", token);
+
   return (
     <div className="header">
       <Link to="/">
@@ -46,6 +49,7 @@ const Header = ({
         {isHome && (
           <div className="header-filter-elements">
             <span> Trier par prix: </span>
+            <HeaderSorted />
             <input
               type="checkbox"
               defaultChecked={sorted === "asc"}
@@ -66,6 +70,7 @@ const Header = ({
           className="theme-secondary"
           onClick={() => {
             setUser(null);
+            console.log("deconnecter");
             navigate("/");
           }}
         >
