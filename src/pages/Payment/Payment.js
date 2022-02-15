@@ -14,9 +14,8 @@ const Payment = ({ userId, selectedProduct }) => {
     if (!selectedProduct) {
       navigate("/");
     }
-  }, [selectedProduct]);
+  }, [selectedProduct, navigate]);
 
-  console.log("selectedProduct", selectedProduct);
   const order = selectedProduct?.product_price || 0;
   const title = selectedProduct?.product_name || "";
   const fee_protection = (order * 10) / 100;

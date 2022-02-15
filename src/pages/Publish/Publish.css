@@ -69,3 +69,11 @@
   width: 115px;
   font-size: 16px;
 }
+
+.publish-uploaded-file {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

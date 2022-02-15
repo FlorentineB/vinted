@@ -2,14 +2,15 @@ import * as React from "react";
 import Switch from "react-switch";
 import { BsSortNumericDown, BsSortNumericUpAlt } from "react-icons/bs";
 
-const HeaderSorted = () => {
-  const [checked, setChecked] = React.useState(true);
+const HeaderSorted = ({ sorted, handleSorted }) => {
+  const [checked, setChecked] = React.useState(sorted === "asc");
   const handleChange = (e) => {
+    handleSorted(!checked);
     setChecked(!checked);
   };
 
   return (
-    <>
+    <div style={{ marginRight: 30 }}>
       <Switch
         checked={checked}
         onChange={handleChange}
@@ -43,7 +44,7 @@ const HeaderSorted = () => {
         }
         className="react-switch-custom"
       />
-    </>
+    </div>
   );
 };
 

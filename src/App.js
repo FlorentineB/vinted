@@ -20,8 +20,6 @@ function App() {
   const [priceMax, setPriceMax] = useState(100);
   const [sorted, setSorted] = useState("asc");
 
-  console.log("title", title, sorted);
-
   const setUser = (user) => {
     if (!user) {
       Cookies.remove("userToken");
@@ -40,8 +38,6 @@ function App() {
       setUserId(userId);
     }
   };
-
-  console.log("creds", token, userId);
 
   return (
     <Router>

@@ -20,7 +20,7 @@ const HeaderPrice = ({ setPriceMin, setPriceMax, priceMin, priceMax }) => {
         display: "flex",
         justifyContent: "center",
         flexWrap: "wrap",
-        minWidth: "200px",
+        width: "300px",
       }}
     >
       <Range
@@ -69,7 +69,6 @@ const HeaderPrice = ({ setPriceMin, setPriceMax, priceMin, priceMax }) => {
               height: "15px",
               width: "15px",
               borderRadius: "50%",
-              borderRadius: "4px",
               backgroundColor: color,
               display: "flex",
               justifyContent: "center",

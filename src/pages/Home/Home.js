@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Hero from "../../components/Hero/Hero";
 import "./Home.css";
+import logo from "../../logo1.png";
 
 const Home = ({ title, priceMin, priceMax, sorted }) => {
   // On crée 2 useState :
@@ -12,7 +13,7 @@ const Home = ({ title, priceMin, priceMax, sorted }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    let queryParams = `?sorted=${sorted}`;
+    let queryParams = `?sort=price-${sorted}`;
     if (title) {
       queryParams += `&title=${title}`;
     }
@@ -22,7 +23,6 @@ const Home = ({ title, priceMin, priceMax, sorted }) => {
     if (priceMax) {
       queryParams += `&priceMax=${priceMax}`;
     }
-    console.log("queryParams", queryParams);
 
     const fetchData = async () => {
       // On fait une requête pour récupérer les informations de l'API
@@ -56,6 +56,7 @@ const Home = ({ title, priceMin, priceMax, sorted }) => {
             if (elem.hasOwnProperty("TAILLE")) {
               size = elem.TAILLE;
             }
+            return elem;
           });
           return (
             <div key={product._id} className="products_presentation">
@@ -67,7 +68,7 @@ const Home = ({ title, priceMin, priceMax, sorted }) => {
                       src={
                         product.owner.account.avatar
                           ? product.owner.account.avatar.secure_url
-                          : null
+                          : logo
                       }
                       alt="product_owner"
                     />

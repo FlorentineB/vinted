@@ -17,6 +17,7 @@ const Publish = ({ token }) => {
   const [preview, setPreview] = useState("");
 
   const navigate = useNavigate();
+  console.log("preview", preview);
 
   const handleSubmit = async (event) => {
     try {
@@ -33,9 +34,6 @@ const Publish = ({ token }) => {
         formData.append("city", city);
         formData.append("price", price);
 
-        console.log(formData);
-        console.log(picture);
-
         const response = await axios.post(
           "https://lereacteur-vinted-api.herokuapp.com/offer/publish",
           formData,
@@ -43,9 +41,9 @@ const Publish = ({ token }) => {
         );
         if (response.data._id) {
           navigate(`/offer/${response.data._id}`);
-        } else {
-          <div>Les champs Photo, Titre et Prix sont obligatoires.</div>;
         }
+      } else {
+        alert("Les champs Photo, Titre et Prix sont obligatoires.");
       }
     } catch (error) {
       console.log(error.message);
@@ -56,9 +54,26 @@ const Publish = ({ token }) => {
     <form onSubmit={handleSubmit} className="publish-form">
       <h2>Vends ton article</h2>
       <div className="publish-card">
+        {picture ? (
+          <div className="publish-uploaded-file">
+            <img
+              src={preview}
+              alt="uploaded"
+              width={80}
+              height={80}
+              style={{ objectFit: "contain", textAlign: "center" }}
+            />
+          </div>
+        ) : (
+          <></>
+        )}
         <label htmlFor="file">
           <div className="publish-add-file">
-            <AiOutlinePlusCircle /> <p>Ajouter une photo</p>
+            <AiOutlinePlusCircle />{" "}
+            <p style={{ marginLeft: "5px" }}>
+              {" "}
+              {picture ? "Changer de" : "Ajouter une"} photo
+            </p>
           </div>
         </label>
         <input

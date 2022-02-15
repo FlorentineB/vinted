@@ -1,0 +1,10 @@
+.found-wrapper {
+  width: 100%;
+  height: calc(100vh - 57px);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #2cb1ba;
+  font-weight: bold;
+}

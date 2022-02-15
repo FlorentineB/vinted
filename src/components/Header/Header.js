@@ -25,12 +25,9 @@ const Header = ({
     setTitle(event.target.value);
   };
 
-  const handleSorted = (event) => {
-    console.log("checked", event.target.checked);
-    setSorted(event.target.checked ? "asc" : "desc");
+  const handleSorted = (checked) => {
+    setSorted(checked ? "asc" : "desc");
   };
-
-  console.log("token", token);
 
   return (
     <div className="header">
@@ -39,7 +36,7 @@ const Header = ({
       </Link>
       <div className="header-filter">
         <div className="search-input">
-          <FaSearch />
+          <FaSearch color="#bbb" />
           <input
             type="text"
             onChange={handleTitle}
@@ -48,20 +45,20 @@ const Header = ({
         </div>
         {isHome && (
           <div className="header-filter-elements">
-            <span> Trier par prix: </span>
-            <HeaderSorted />
-            <input
-              type="checkbox"
-              defaultChecked={sorted === "asc"}
-              onClick={handleSorted}
-            />
-            <span> Prix entre: </span>
-            <HeaderPrice
-              setPriceMin={setPriceMin}
-              setPriceMax={setPriceMax}
-              priceMin={priceMin}
-              priceMax={priceMax}
-            />
+            <div className="header-filter-elements-sub">
+              <span> Trier par prix: </span>
+              <HeaderSorted sorted={sorted} handleSorted={handleSorted} />
+            </div>
+
+            <div className="header-filter-elements-sub">
+              <span> Prix entre: </span>
+              <HeaderPrice
+                setPriceMin={setPriceMin}
+                setPriceMax={setPriceMax}
+                priceMin={priceMin}
+                priceMax={priceMax}
+              />
+            </div>
           </div>
         )}
       </div>
@@ -70,7 +67,6 @@ const Header = ({
           className="theme-secondary"
           onClick={() => {
             setUser(null);
-            console.log("deconnecter");
             navigate("/");
           }}
         >

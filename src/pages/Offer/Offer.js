@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import "./Offer.css";
+import logo from "../../logo1.png";
 
 const Offer = ({ setSelectedProduct }) => {
   // On récupère les params
@@ -25,7 +26,7 @@ const Offer = ({ setSelectedProduct }) => {
     };
     // On exécute la fonction fetchData :
     fetchData();
-  }, [id]);
+  }, [id, setSelectedProduct]);
 
   // Grâce à une ternaire, on gère les cas selon si isLoading est true ou false :
   return isLoading ? (
@@ -33,6 +34,7 @@ const Offer = ({ setSelectedProduct }) => {
   ) : (
     <div className="product_detail">
       <img
+        alt="product_detail"
         className="product_detail_photo"
         src={data.product_image.secure_url}
       />
@@ -61,7 +63,7 @@ const Offer = ({ setSelectedProduct }) => {
               src={
                 data.owner.account.avatar
                   ? data.owner.account.avatar.secure_url
-                  : null
+                  : logo
               }
               alt="product_owner"
             />
@@ -70,8 +72,8 @@ const Offer = ({ setSelectedProduct }) => {
             </span>
           </div>
         </div>
-        <Link to="/payment">
-          <button className="theme-primary">Acheter</button>
+        <Link to="/payment" style={{ textDecoration: "none" }}>
+          <button className="theme-primary offer-submit">Acheter</button>
         </Link>
       </div>
     </div>

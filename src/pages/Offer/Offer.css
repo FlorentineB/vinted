@@ -18,6 +18,7 @@
   justify-content: space-between;
   background-color: white;
   padding: 40px;
+  min-width: 300px;
 }
 
 .offer-price {
@@ -83,4 +84,19 @@ li.offer-details {
   padding: 0 16px;
   line-height: 36px;
   margin-top: 32px;
+}
+
+.offer-submit {
+  margin-top: 8px;
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  line-height: 22px;
+  height: 44px;
+  padding: 0 14px;
+  color: #fff;
+  border: 1px solid;
+  border-radius: 4px;
+  background: #2cb1ba;
+  border-color: #2cb1ba;
 }
