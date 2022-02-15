@@ -1,0 +1,45 @@
+.sign-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.sign-form {
+  display: flex;
+  flex-direction: column;
+  width: 275px;
+  margin: auto;
+}
+
+.sign-form > input {
+  border: none;
+  border-bottom: 1px solid #fcced3;
+  height: 35px;
+  margin-bottom: 20px;
+}
+
+.sign-checkbox-container {
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.sign-checkbox-container input[type="checkbox"] {
+  transform: scale(2);
+  margin-right: 20px;
+}
+
+.general-conditions > p {
+  text-align: left;
+  color: #999;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+.sign-wrapper a {
+  color: #2cb1ba;
+  font-size: 12px;
+  text-decoration: none;
+  margin-top: 20px;
+}

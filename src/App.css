@@ -1,1 +1,41 @@
 /* Other rules */
+@font-face {
+  font-family: "Maison Neue";
+  src: url("./Font.woff2");
+}
+
+body {
+  font-size: 16px;
+  font-family: "Maison Neue";
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  border-radius: 5px;
+  font-family: "Maison Neue";
+  outline: none;
+  border: 1px solid #2cb1ba;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+input[type="text" i] {
+  padding: 1px 2px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.theme-primary {
+  color: rgb(255, 255, 255);
+  background-color: rgb(44, 177, 186);
+}
+
+.theme-secondary {
+  background-color: #fff;
+  color: #2cb1ba;
+}

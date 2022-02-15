@@ -1,0 +1,71 @@
+.products-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-direction: space-between;
+  justify-content: center;
+}
+
+.products_presentation {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: space-around;
+  padding: 0 4px 16px;
+}
+.products_presentation > * {
+  font-family: "Maison Neue";
+  text-decoration: none;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  width: 400 px;
+}
+
+.product-details-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+}
+
+.product-price {
+  font-size: 14px;
+}
+
+.product-details {
+  font-size: 12px;
+  color: #999;
+  font-family: "Maison Neue";
+  -webkit-font-smoothing: antialiased;
+}
+
+.product_owner_info {
+  display: flex;
+  flex-direction: row;
+  color: lightgrey;
+  text-decoration: underline;
+  align-items: center;
+}
+
+.product_owner_photo {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+}
+
+.product_owner_name {
+  font-size: 12px;
+}
+
+.product_photo {
+  width: 235px;
+  height: 426px;
+  object-fit: cover;
+}
+
+.product h2 {
+  font-size: 16px;
+  padding: 5px;
+}
